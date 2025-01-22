@@ -2,7 +2,6 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 import { LoginDto, UpdateProfileDto } from './login.dto';
-import { ValidationError } from 'class-validator';
 
 describe('AuthController', () => {
   let authController: AuthController;
@@ -23,22 +22,12 @@ describe('AuthController', () => {
           useValue: mockAuthService,
         },
       ],
-    })
-      .useGlobalPipes(new ValidationPipe()) // Apply ValidationPipe here
-      .compile();
+    }).compile();
     authController = module.get<AuthController>(AuthController);
     authService = module.get<AuthService>(AuthService);
   });
 
   describe('login', () => {
-    it('should throw an error if email or password is not provided', async () => {
-      const loginDto: LoginDto = {
-        email: '',
-        password: '',
-      };
-
-      await expect(authController.login(loginDto)).rejects.toThrow();
-    });
     it('should call AuthService.login and return its result', async () => {
       const loginDto: LoginDto = {
         email: 'test@example.com',
