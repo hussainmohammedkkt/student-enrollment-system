@@ -63,4 +63,11 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+### Student Enrollment System
+This system allows for the management of students, courses, and enrollments. It features a role-based access control system:
 
+Superadmins: Have the highest privileges and can manage other admin accounts.
+Admins: Can manage students, courses, and enrollments.
+Students: Have access only to their own profile.
+
+This structure ensures proper segregation of duties and role-specific access to various features of the system.
