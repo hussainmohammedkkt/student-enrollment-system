@@ -33,6 +33,11 @@ $ npm install
 ```
  Add a .env file in the root of the project with the content inside .env-sample file
 
+## Swagger documentation
+
+Swagger documentation is available at http://localhost:3000/api
+
+
 ## Compile and run the project
 
 ```bash
