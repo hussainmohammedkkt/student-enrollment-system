@@ -7,7 +7,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { CreateAdminDto, UpdateAdminDto } from './admin.dto';
 import * as bcrypt from 'bcrypt';
 import { Model } from 'mongoose';
-import { User, UserStatus, UserType } from 'src/user/user.model';
+import { User, UserStatus, UserType } from './user.model';
 
 @Injectable()
 export class AdminService {

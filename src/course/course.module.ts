@@ -3,7 +3,7 @@ import { CourseController } from './course.controller';
 import { CourseService } from './course.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { CourseSchema } from './course.model';
-import { EnrollmentSchema } from 'src/enrollment/enrollment.model';
+import { EnrollmentSchema } from '../enrollment/enrollment.model';
 
 @Module({
   imports: [

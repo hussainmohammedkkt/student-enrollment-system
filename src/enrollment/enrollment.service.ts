@@ -7,10 +7,10 @@ import { InjectModel } from '@nestjs/mongoose';
 import mongoose, { Model } from 'mongoose';
 import { Enrollment } from './enrollment.model';
 import { CreateEnrollmentDto, UpdateEnrollmentDto } from './enrollment.dto';
-import { CourseService } from 'src/course/course.service';
-import { StudentService } from 'src/user/student.service';
-import { CourseStatus } from 'src/course/course.model';
-import { UserStatus } from 'src/user/user.model';
+import { CourseService } from '../course/course.service';
+import { StudentService } from '../user/student.service';
+import { CourseStatus } from '../course/course.model';
+import { UserStatus } from '../user/user.model';
 
 @Injectable()
 export class EnrollmentService {

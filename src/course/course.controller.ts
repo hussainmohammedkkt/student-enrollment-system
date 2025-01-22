@@ -11,11 +11,11 @@ import {
 } from '@nestjs/common';
 import { CreateCourseDto, UpdateCourseDto } from './course.dto';
 import { CourseService } from './course.service';
-import { AuthenticationGuard } from 'src/authentication/authentication.guard';
-import { RolesGuard } from 'src/authorization/roles.guard';
-import { Roles } from 'src/role/roles.decorator';
-import { UserType } from 'src/user/user.model';
 import { ApiOperation } from '@nestjs/swagger';
+import { AuthenticationGuard } from '../authentication/authentication.guard';
+import { RolesGuard } from '../authorization/roles.guard';
+import { UserType } from '../user/user.model';
+import { Roles } from '../role/roles.decorator';
 
 @UseGuards(AuthenticationGuard, RolesGuard)
 @Roles(UserType.SUPER_ADMIN, UserType.ADMIN)

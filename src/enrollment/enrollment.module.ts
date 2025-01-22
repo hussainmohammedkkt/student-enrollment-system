@@ -3,8 +3,8 @@ import { EnrollmentController } from './enrollment.controller';
 import { EnrollmentService } from './enrollment.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { EnrollmentSchema } from './enrollment.model';
-import { CourseModule } from 'src/course/course.module';
-import { UserModule } from 'src/user/user.module';
+import { CourseModule } from '../course/course.module';
+import { UserModule } from '../user/user.module';
 
 @Module({
   imports: [

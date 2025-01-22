@@ -10,12 +10,12 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { EnrollmentService } from './enrollment.service';
-import { AuthenticationGuard } from 'src/authentication/authentication.guard';
-import { RolesGuard } from 'src/authorization/roles.guard';
-import { Roles } from 'src/role/roles.decorator';
-import { UserType } from 'src/user/user.model';
 import { CreateEnrollmentDto, UpdateEnrollmentDto } from './enrollment.dto';
 import { ApiOperation } from '@nestjs/swagger';
+import { RolesGuard } from '../authorization/roles.guard';
+import { AuthenticationGuard } from '../authentication/authentication.guard';
+import { UserType } from '../user/user.model';
+import { Roles } from '../role/roles.decorator';
 
 @UseGuards(AuthenticationGuard, RolesGuard)
 @Roles(UserType.SUPER_ADMIN, UserType.ADMIN)

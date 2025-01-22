@@ -6,8 +6,8 @@ import {
 } from '@nestjs/common';
 import { Request } from 'express';
 import * as jwt from 'jsonwebtoken';
-import { config } from 'src/config/config';
 import { DecodedUserToken } from './decoded-token.interface';
+import { config } from '../config/config';
 
 @Injectable()
 export class AuthenticationGuard implements CanActivate {

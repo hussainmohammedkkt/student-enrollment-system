@@ -1,4 +1,4 @@
-import { UserType } from 'src/user/user.model';
+import { UserType } from '../user/user.model';
 
 export interface DecodedUserToken {
   sub: string;

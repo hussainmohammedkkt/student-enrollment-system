@@ -6,6 +6,18 @@ import { AdminService } from './user/admin.service';
 import { config } from './config/config';
 
 async function bootstrap() {
+  if (!config.mongo_uri) {
+    console.error('MongoDB URI is not set');
+    process.exit(1);
+  }
+  if (!config.jwt_secret) {
+    console.error('JWT secret is not set');
+    process.exit(1);
+  }
+  if (!config.port) {
+    console.error('Port is not set');
+    process.exit(1);
+  }
   const app = await NestFactory.create(AppModule);
 
   const swaggerConfig = new DocumentBuilder()
@@ -28,6 +40,11 @@ async function bootstrap() {
   const adminService = app.get(AdminService);
   adminService.createSuperAdmin();
 
-  await app.listen(config.port);
+  //set 0.0.0.0 as host to allow access from outside the container
+  await app.listen(config.port, '0.0.0.0');
+  process.on('SIGINT', async () => {
+    await app.close();
+    process.exit(0);
+  });
 }
 bootstrap();

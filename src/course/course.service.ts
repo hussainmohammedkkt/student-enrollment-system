@@ -5,9 +5,9 @@ import {
 } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Enrollment } from 'src/enrollment/enrollment.model';
 import { CreateCourseDto, UpdateCourseDto } from './course.dto';
 import { Course, CourseStatus } from './course.model';
+import { Enrollment } from '../enrollment/enrollment.model';
 
 @Injectable()
 export class CourseService {

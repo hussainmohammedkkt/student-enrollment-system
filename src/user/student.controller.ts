@@ -12,10 +12,10 @@ import {
 import { ApiOperation } from '@nestjs/swagger';
 import { CreateStudentDto, UpdateStudentDto } from './student.dto';
 import { StudentService } from './student.service';
-import { AuthenticationGuard } from 'src/authentication/authentication.guard';
-import { RolesGuard } from 'src/authorization/roles.guard';
-import { Roles } from 'src/role/roles.decorator';
 import { UserType } from './user.model';
+import { RolesGuard } from '../authorization/roles.guard';
+import { Roles } from '../role/roles.decorator';
+import { AuthenticationGuard } from '../authentication/authentication.guard';
 
 @UseGuards(AuthenticationGuard, RolesGuard)
 @Controller('student')

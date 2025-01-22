@@ -10,7 +10,7 @@ import {
 import { LoginDto, UpdateProfileDto } from './login.dto';
 import { AuthService } from './auth.service';
 import { ApiOperation } from '@nestjs/swagger';
-import { AuthenticationGuard } from 'src/authentication/authentication.guard';
+import { AuthenticationGuard } from '../authentication/authentication.guard';
 
 @Controller('auth')
 export class AuthController {

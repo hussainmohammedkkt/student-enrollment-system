@@ -12,10 +12,10 @@ import {
 import { AdminService } from './admin.service';
 import { ApiOperation } from '@nestjs/swagger';
 import { CreateAdminDto, UpdateAdminDto } from './admin.dto';
-import { AuthenticationGuard } from 'src/authentication/authentication.guard';
-import { RolesGuard } from 'src/authorization/roles.guard';
-import { Roles } from 'src/role/roles.decorator';
 import { UserType } from './user.model';
+import { AuthenticationGuard } from '../authentication/authentication.guard';
+import { RolesGuard } from '../authorization/roles.guard';
+import { Roles } from '../role/roles.decorator';
 
 @UseGuards(AuthenticationGuard, RolesGuard)
 @Roles(UserType.SUPER_ADMIN)

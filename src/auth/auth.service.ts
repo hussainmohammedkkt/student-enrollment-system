@@ -5,12 +5,12 @@ import {
 } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { User, UserStatus } from 'src/user/user.model';
 import * as jwt from 'jsonwebtoken';
-import { DecodedUserToken } from 'src/authentication/decoded-token.interface';
-import { config } from 'src/config/config';
+import { config } from '../config/config';
 import * as bcrypt from 'bcrypt';
 import { UpdateProfileDto } from './login.dto';
+import { User, UserStatus } from '../user/user.model';
+import { DecodedUserToken } from '../authentication/decoded-token.interface';
 
 @Injectable()
 export class AuthService {
@@ -65,7 +65,9 @@ export class AuthService {
       if (result.modifiedCount === 0) {
         throw new NotFoundException('User not found');
       }
-      return null;
+      return {
+        message: 'Profile updated successfully',
+      };
     } catch (error) {
       throw new NotFoundException('User not found');
     }
